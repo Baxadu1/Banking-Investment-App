@@ -1,9 +1,9 @@
 import java.sql.*;
 
 public class DatabaseConnection {
-    private static final String URL = "jdbc:postgresql://localhost:5432/Mydatabase";  // Имя вашей базы данных
-    private static final String USER = "postgres";  // Имя пользователя базы данных
-    private static final String PASSWORD = "0000";  // Пароль пользователя
+    private static final String URL = "jdbc:postgresql://localhost:5432/Mydatabase";
+    private static final String USER = "postgres";
+    private static final String PASSWORD = "0000";
 
 
     public static Connection connect() {

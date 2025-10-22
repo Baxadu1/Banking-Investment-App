@@ -14,7 +14,7 @@ public class Main {
         scanner.nextLine();
 
         if (choice == 1) {
-            // Регистрация
+
             System.out.println("Enter username:");
             String username = scanner.nextLine();
             System.out.println("Enter password:");
