@@ -1,9 +1,9 @@
 package classes;
 
-public class investmentaccount implements account {
+public class savingaccount implements account {
     private double balance;
 
-    public investmentaccount(){
+    public savingaccount(){
         balance = 0;
     }
 
@@ -25,6 +25,6 @@ public class investmentaccount implements account {
     }
 
     public void printAccountDetails() {
-        System.out.println("investment Account Balance: " + balance);
+        System.out.println("savings Account Balance: " + balance);
     }
 }

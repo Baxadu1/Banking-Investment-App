@@ -3,27 +3,23 @@ package decorators;
 import classes.account;
 
 public abstract class accountdecorator implements account {
-    protected account Account;
-    public accountdecorator(account Account) {
-        this.Account = Account;
-    }
-    @Override
-    public double getBalance() {
-        return Account.getBalance();
+    protected account decoratedaccount;
+
+    public accountdecorator(account decoratedaccount){
+        this.decoratedaccount = decoratedaccount;
     }
 
-    public void open() {
-        Account.open();
+    public void deposit(double amount){
+        decoratedaccount.deposit(amount);
     }
-    public void close() {
-        Account.close();
+    public void withdraw(double amount){
+        decoratedaccount.withdraw(amount);
+    }
+    public double getBalance(){
+        return decoratedaccount.getBalance();
     }
 
-    public void deposit(double amount) {
-        Account.deposit(amount);
-    }
-
-    public void withdraw(double amount) {
-        Account.withdraw(amount);
+    public void printAccountDetails() {
+        decoratedaccount.printAccountDetails();
     }
 }
