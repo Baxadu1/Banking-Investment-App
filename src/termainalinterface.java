@@ -22,9 +22,8 @@ public class termainalinterface {
             System.out.println("5. View Account Details");
             System.out.println("6. Close Account");
             System.out.println("7. Exit");
-            if (currentAccount instanceof investmentaccount) {
-                System.out.println("8. Buy Insurance for Investment Account");
-            }
+            System.out.println("8. Buy Insurance for Investment Account");
+
 
             System.out.print("Enter your choice: ");
             choice = scanner.nextInt();
@@ -54,11 +53,7 @@ public class termainalinterface {
                     System.exit(0);
                     break;
                 case 8:
-                    if (currentAccount instanceof investmentaccount) {
-                        buyInsurance();
-                    } else {
-                        System.out.println("Invalid choice, please try again.");
-                    }
+                    buyInsurance();
                     break;
                 default:
                     System.out.println("Invalid choice, please try again.");
@@ -120,12 +115,15 @@ public class termainalinterface {
     }
 
     private static void buyInsurance() {
-        if (currentAccount == null) {
-            System.out.println("No account found. Please open an account first.");
-            return;
-        }
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Do you want to buy insurance for $700? (yes/no): ");
+        String response = scanner.nextLine().toLowerCase();
 
-        facade.purchaseInsurance(currentAccount);
+        if (response.equals("yes")) {
+            facade.purchaseInsurance(currentAccount);
+        } else {
+            System.out.println("Insurance purchase cancelled.");
+        }
     }
 
     private static void closeAccount() {

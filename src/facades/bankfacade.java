@@ -26,10 +26,6 @@ public class bankfacade {
 
     public void purchaseInsurance(account acc) {
         if (acc instanceof investmentaccount) {
-
-            if (!(acc instanceof insurancedecorator)) {
-                acc = new insurancedecorator(acc);
-            }
             insurancedecorator insuranceDecorator = (insurancedecorator) acc;
             insuranceDecorator.purchaseInsurance();
         } else {
